@@ -1,12 +1,12 @@
 //
-//  CLIHelper.m
-//  Created by psy on 16/10/9.
+//  DFHelper.m
+//  Created by 全程恺 on 16/10/9.
 //  Copyright (c) 2015年 Danfort. All rights reserved.
 //
 
-#import "CLIHelper.h"
+#import "DFHelper.h"
 
-@implementation CLIHelper
+@implementation DFHelper
 
 + (id)getTargetClass:(Class)className fromObject:(id)obj
 {

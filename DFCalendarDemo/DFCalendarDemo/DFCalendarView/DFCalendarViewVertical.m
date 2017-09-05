@@ -1,9 +1,9 @@
 //
 //  DFCalendarViewVertical.m
-//  ClickNetApp
+//  DFCalendarDemo
 //
 //  Created by 全程恺 on 2017/5/9.
-//  Copyright © 2017年 xmisp. All rights reserved.
+//  Copyright © 2017年 全程恺. All rights reserved.
 //
 
 #import "DFCalendarViewVertical.h"
@@ -110,8 +110,8 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:kNotification_Select_Day object:nil];
     }
     
-    [CLIHelper removeObjectForDestKey:kFromDateKey];
-    [CLIHelper removeObjectForDestKey:kToDateKey];
+    [DFHelper removeObjectForDestKey:kFromDateKey];
+    [DFHelper removeObjectForDestKey:kToDateKey];
 }
 
 /*

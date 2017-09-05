@@ -22,7 +22,7 @@
 		B3D76F111F5D4372008A1E2E /* DFCalendarViewHorizontal.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D76F011F5D4372008A1E2E /* DFCalendarViewHorizontal.m */; };
 		B3D76F121F5D4372008A1E2E /* DFCalendarViewVertical.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D76F031F5D4372008A1E2E /* DFCalendarViewVertical.m */; };
 		B3D76F131F5D4372008A1E2E /* DFCalendarWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D76F051F5D4372008A1E2E /* DFCalendarWeekView.m */; };
-		B3D76F181F5D4539008A1E2E /* CLIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D76F171F5D4539008A1E2E /* CLIHelper.m */; };
+		B3D76F181F5D4539008A1E2E /* DFHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D76F171F5D4539008A1E2E /* DFHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,8 +55,8 @@
 		B3D76F031F5D4372008A1E2E /* DFCalendarViewVertical.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFCalendarViewVertical.m; sourceTree = "<group>"; };
 		B3D76F041F5D4372008A1E2E /* DFCalendarWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFCalendarWeekView.h; sourceTree = "<group>"; };
 		B3D76F051F5D4372008A1E2E /* DFCalendarWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFCalendarWeekView.m; sourceTree = "<group>"; };
-		B3D76F161F5D4539008A1E2E /* CLIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLIHelper.h; sourceTree = "<group>"; };
-		B3D76F171F5D4539008A1E2E /* CLIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLIHelper.m; sourceTree = "<group>"; };
+		B3D76F161F5D4539008A1E2E /* DFHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHelper.h; sourceTree = "<group>"; };
+		B3D76F171F5D4539008A1E2E /* DFHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +104,8 @@
 				B3D76EE21F5D4271008A1E2E /* AppDelegate.m */,
 				B3D76EE41F5D4271008A1E2E /* ViewController.h */,
 				B3D76EE51F5D4271008A1E2E /* ViewController.m */,
-				B3D76F161F5D4539008A1E2E /* CLIHelper.h */,
-				B3D76F171F5D4539008A1E2E /* CLIHelper.m */,
+				B3D76F161F5D4539008A1E2E /* DFHelper.h */,
+				B3D76F171F5D4539008A1E2E /* DFHelper.m */,
 				B3D76EF51F5D4372008A1E2E /* DFCalendarView */,
 				B3D76EE71F5D4271008A1E2E /* Main.storyboard */,
 				B3D76EEA1F5D4271008A1E2E /* Assets.xcassets */,
@@ -283,7 +283,7 @@
 				B3D76EE61F5D4271008A1E2E /* ViewController.m in Sources */,
 				B3D76F0E1F5D4372008A1E2E /* DFCalendarDayView.m in Sources */,
 				B3D76F0C1F5D4372008A1E2E /* DFCalendarContentViewH.m in Sources */,
-				B3D76F181F5D4539008A1E2E /* CLIHelper.m in Sources */,
+				B3D76F181F5D4539008A1E2E /* DFHelper.m in Sources */,
 				B3D76EE31F5D4271008A1E2E /* AppDelegate.m in Sources */,
 				B3D76F131F5D4372008A1E2E /* DFCalendarWeekView.m in Sources */,
 				B3D76EE01F5D4271008A1E2E /* main.m in Sources */,

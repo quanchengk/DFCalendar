@@ -44,7 +44,7 @@ return _instance; \
 #define kNavBarHeight 64.0
 
 #import <Foundation/Foundation.h>
-#import "CLIHelper.h"
+#import "DFHelper.h"
 #import <Masonry.h>
 #import <ReactiveCocoa.h>
 

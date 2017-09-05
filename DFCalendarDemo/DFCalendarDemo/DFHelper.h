@@ -1,6 +1,6 @@
 //
-//  CLIHelperHelper.h
-//  Created by psy on 16/10/9.
+//  DFHelperHelper.h
+//  Created by 全程恺 on 16/10/9.
 //  Copyright (c) 2016年 Danfort. All rights reserved.
 //  工具类
 
@@ -30,7 +30,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CLIHelper : UIControl <UIAlertViewDelegate>
+@interface DFHelper : UIControl <UIAlertViewDelegate>
 
 
 /**

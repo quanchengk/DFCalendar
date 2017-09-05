@@ -115,8 +115,8 @@ typedef NS_OPTIONS(NSUInteger, DFCalendarDayType) {
 
 - (void)setStatus {
     
-    NSDate *from = [CLIHelper objectForDestKey:kFromDateKey];
-    NSDate *to = [CLIHelper objectForDestKey:kToDateKey];
+    NSDate *from = [DFHelper objectForDestKey:kFromDateKey];
+    NSDate *to = [DFHelper objectForDestKey:kToDateKey];
     
     if ([self.date isEqualToDate:from] || [self.date isEqualToDate:to]) {
         
@@ -167,14 +167,14 @@ typedef NS_OPTIONS(NSUInteger, DFCalendarDayType) {
 
 - (void)select {
     
-    NSDate *from = [CLIHelper objectForDestKey:kFromDateKey];
-    NSDate *to = [CLIHelper objectForDestKey:kToDateKey];
+    NSDate *from = [DFHelper objectForDestKey:kFromDateKey];
+    NSDate *to = [DFHelper objectForDestKey:kToDateKey];
     
     //点第三个内容时，根据属性判断是否要移除之前选择的内容
     if (_thirdClickCancelArea && from && to && ![from isEqualToDate:to]) {
         
-        id superView = [CLIHelper getTargetClass:[DFCalendarViewVertical class] fromObject:self];
-        if (!superView) superView = [CLIHelper getTargetClass:[DFCalendarViewHorizontal class] fromObject:self];
+        id superView = [DFHelper getTargetClass:[DFCalendarViewVertical class] fromObject:self];
+        if (!superView) superView = [DFHelper getTargetClass:[DFCalendarViewHorizontal class] fromObject:self];
         
         if ([superView respondsToSelector:@selector(reset)]) {
             
@@ -200,8 +200,8 @@ typedef NS_OPTIONS(NSUInteger, DFCalendarDayType) {
                 
                 //开始、结束日期为同一天，并且再次选中这一天，则左右选择都取消
                 
-                [CLIHelper removeObjectForDestKey:kFromDateKey];
-                [CLIHelper removeObjectForDestKey:kToDateKey];
+                [DFHelper removeObjectForDestKey:kFromDateKey];
+                [DFHelper removeObjectForDestKey:kToDateKey];
                 
                 [[NSNotificationCenter defaultCenter] postNotificationName:kNotification_Select_Day object:nil];
                 return;
@@ -257,8 +257,8 @@ typedef NS_OPTIONS(NSUInteger, DFCalendarDayType) {
         NSLog(@"所选日期超出当前时间，已为您自动选择到今天");
     }
     
-    [CLIHelper setObject:from forDestKey:kFromDateKey];
-    [CLIHelper setObject:to forDestKey:kToDateKey];
+    [DFHelper setObject:from forDestKey:kFromDateKey];
+    [DFHelper setObject:to forDestKey:kToDateKey];
     
     [self sendNotification:YES];
     
@@ -267,8 +267,8 @@ typedef NS_OPTIONS(NSUInteger, DFCalendarDayType) {
 
 - (void)sendNotification:(BOOL)showHightLight {
     
-    NSDate *from = [CLIHelper objectForDestKey:kFromDateKey];
-    NSDate *to = [CLIHelper objectForDestKey:kToDateKey];
+    NSDate *from = [DFHelper objectForDestKey:kFromDateKey];
+    NSDate *to = [DFHelper objectForDestKey:kToDateKey];
     
     do {
         
