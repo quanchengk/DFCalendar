@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "DFCalendarView.h"
 
-@interface ViewController ()
+@interface ViewController () <DFCalendarDelegate>
 
 @end
 
@@ -21,23 +22,32 @@
 
 - (IBAction)showHorizontalCalendar:(UIButton *)sender {
     
-    [self showClass:@"DFCalendarViewHorizontal" fromSender:sender];
+    [self showCalendar:DFCalendarHorizontal fromSender:sender];
 }
 
 - (IBAction)showVerticalCalendar:(UIButton *)sender {
     
-    [self showClass:@"DFCalendarViewVertical" fromSender:sender];
+    [self showCalendar:DFCalendarVertical fromSender:sender];
 }
 
-- (void)showClass:(NSString *)className fromSender:(UIButton *)sender {
+- (void)showCalendar:(DFCalendarType)type fromSender:(UIButton *)sender {
     
     UIViewController *vc = [UIViewController new];
     vc.title = sender.titleLabel.text;
-    vc.view.backgroundColor = [UIColor whiteColor];
+    vc.view.backgroundColor = HEXCOLOR(kColorWhite);
     
-    id calendar = [[NSClassFromString(className) alloc] initWithFrame:vc.view.bounds];
+    DFCalendarView *calendar = [[DFCalendarView alloc] initWithFrame:vc.view.bounds type:type delegate:self];
     [vc.view addSubview:calendar];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - delegate
+- (void)df_calendarDidSelectDaysFrom:(NSDate *)fromDate to:(NSDate *)toDate {
+    
+    NSDateFormatter *dateF = [NSDateFormatter new];
+    dateF.dateFormat = @"yyyy.MM.dd";
+    
+    NSLog(@"开始日期：%@, 结束日期：%@", [dateF stringFromDate:fromDate], [dateF stringFromDate:toDate]);
 }
 
 - (void)didReceiveMemoryWarning {

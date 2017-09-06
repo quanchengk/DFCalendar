@@ -7,8 +7,7 @@
 //
 
 #import "DFCalendarDayView.h"
-#import "DFCalendarViewVertical.h"
-#import "DFCalendarViewHorizontal.h"
+#import "DFCalendarView.h"
 
 typedef NS_OPTIONS(NSUInteger, DFCalendarDayType) {
     
@@ -173,8 +172,7 @@ typedef NS_OPTIONS(NSUInteger, DFCalendarDayType) {
     //点第三个内容时，根据属性判断是否要移除之前选择的内容
     if (_thirdClickCancelArea && from && to && ![from isEqualToDate:to]) {
         
-        id superView = [DFHelper getTargetClass:[DFCalendarViewVertical class] fromObject:self];
-        if (!superView) superView = [DFHelper getTargetClass:[DFCalendarViewHorizontal class] fromObject:self];
+        id superView = [DFHelper getTargetClass:[DFCalendarView class] fromObject:self];
         
         if ([superView respondsToSelector:@selector(reset)]) {
             
@@ -265,6 +263,7 @@ typedef NS_OPTIONS(NSUInteger, DFCalendarDayType) {
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotification_Select_Day object:nil];
 }
 
+//通知所有已变色的dayview改变视图
 - (void)sendNotification:(BOOL)showHightLight {
     
     NSDate *from = [DFHelper objectForDestKey:kFromDateKey];
@@ -316,7 +315,6 @@ typedef NS_OPTIONS(NSUInteger, DFCalendarDayType) {
             }
             
             //画圈
-//            [HEXCOLOR(kColorBlue) set];
             CGContextAddArc(context, self.frame.size.width / 2, self.frame.size.height / 2, self.frame.size.height / 2 - space, 0, M_PI * 2, 0);
             CGContextDrawPath(context, kCGPathFill);
         }

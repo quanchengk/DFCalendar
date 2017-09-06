@@ -6,13 +6,8 @@
 //  Copyright © 2017年 全程恺. All rights reserved.
 //  横向排版
 
-#import <UIKit/UIKit.h>
-#import "DFCalendarTool.h"
-#import "DFCalendarMonthView.h"
-#import "DFCalendarViewHorizontal.h"
+#import "DFCalendarContentView.h"
 
-@interface DFCalendarContentViewH : UIScrollView 
-
-@property (nonatomic, strong) NSDate *date;
+@interface DFCalendarContentViewH : DFCalendarContentView
 
 @end

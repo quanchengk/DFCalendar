@@ -6,14 +6,10 @@
 //  Copyright © 2017年 全程恺. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "DFCalendarMonthView.h"
+#import "DFCalendarContentView.h"
 
-@class DFCalendarContentViewV;
-
-@interface DFCalendarContentViewV : UIScrollView
+@interface DFCalendarContentViewV : DFCalendarContentView
 
 @property (assign, nonatomic) BOOL showLaterTime;
-@property (nonatomic, strong) NSDate *date;
 
 @end

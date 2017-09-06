@@ -46,7 +46,6 @@ return _instance; \
 #import <Foundation/Foundation.h>
 #import "DFHelper.h"
 #import <Masonry.h>
-#import <ReactiveCocoa.h>
 
 typedef NS_ENUM(NSInteger, CalendarVersion) {
     
@@ -56,8 +55,7 @@ typedef NS_ENUM(NSInteger, CalendarVersion) {
 
 @protocol DFCalendarDelegate <NSObject>
 
-- (void)calendarDidSelectDaysFrom:(NSDate *)fromDate to:(NSDate *)toDate;
-- (void)calendarDidCancel;
+- (void)df_calendarDidSelectDaysFrom:(NSDate *)fromDate to:(NSDate *)toDate;
 
 @end
 
@@ -68,28 +66,13 @@ singleton_interface(DFCalendarTool)
 @property (retain, nonatomic) NSCalendar *calendar;
 @property (retain, nonatomic) NSDateFormatter *dateF;
 
-//输入date 输出星期
-+ (NSString *)weekdayStringFromDate:(NSDate*)inputDate;
-
-//计算日期提前或延后
-+ (NSDate *)dateWithDays:(NSInteger)days;
-+ (NSDate *)dateWithDays:(NSInteger)days from:(NSDate *)targetDate;
-
 //距离当前时间N个月的日期
 + (NSDate *)dateWithMonths:(NSInteger)months;
 //日期距离当前时间N个月
 + (NSInteger)monthFromDate:(NSDate *)date;
-//日期距离当前时间N年
-+ (NSInteger)yearFromDate:(NSDate *)date;
 
 //计算给定月份天数
-+ (NSInteger)totaldaysInLastMonth:(NSDate *)date;
 + (NSInteger)totaldaysInMonth:(NSDate *)date;
-+ (NSInteger)totaldaysInNextMonth:(NSDate *)date;
-//计算着三个月的每个月天数 返回数组
-+(NSArray *)daycountWithMonths:(NSDate *)date;
-//返回周几
-+ (NSString *)dayisWeekDay:(NSDate *)date;
 //计算给定月份第一天周几
 + (NSInteger)firstWeekdayInMonth:(NSDate *)date;
 + (BOOL)dayisWorkday:(NSDate *)date;
@@ -98,38 +81,5 @@ singleton_interface(DFCalendarTool)
 
 + (NSInteger)month:(NSDate *)date;
 + (BOOL)isSameDayBetween:(NSDate *)firstDate and:(NSDate *)secondDate;
-
-//传入日期，返回完整日期格式
-+ (NSString *)stringWithDate:(NSDate *)date;
-//传入日期，只返回日期对应的年月日
-+ (NSString *)dayWithDate:(NSDate *)date;
-//传入日期，只返回日期对应的时间
-+ (NSString *)timeWithDate:(NSDate *)date;
-//传入日期，只返回月跟日的时间
-+ (NSString *)timeWithMonth:(NSDate *)date;
-
-//传入日期格式的字符串，返回完整日期
-+ (NSDate *)dateWithString:(NSString *)string;
-//传入年月日的字符串，返回完整日期
-+ (NSDate *)dateWithDay:(NSString *)day;
-//传入时间字符串，返回完整日期
-+ (NSDate *)dateWithTime:(NSString *)time inDay:(NSDate *)day;
-//传入年月，返回date
-+ (NSDate *)dateWithMonthStr:(NSString *)string;
-
-
-//计算当前月开始和结束时间
-+ (NSString *)strWithFirstDayInMonth:(NSDate *)date;
-+ (NSString *)strWithLastDayInMonth:(NSDate *)date;
-
-//计算当天开始和结束时间綴
-+ (NSString *)strWithDayBegin:(NSDate *)date;
-+ (NSString *)strWithDayEnd:(NSDate *)date;
-
-//给定时间返回指定格式 mm月dd日 weekday
-+ (NSString *)stringWitdDayWeekDay:(NSDate *)date;
-
-//给定时间字符串返回天数
-+ (NSInteger)dayWithString:(NSString *)dateStr;
 
 @end
